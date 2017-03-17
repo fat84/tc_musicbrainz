@@ -1,0 +1,43 @@
+git
+perl
+postgresql
+redis
+nodejs
+gnupg
+wget
+libuuid
+perl-dev
+libc-dev
+perl-crypt-rijndael
+
+git clone --recursive git://github.com/metabrainz/musicbrainz-server.git /opt/musicbrainz
+cp lib/DBDefs.pm.sample lib/DBDefs.pm
+
+build phase:
+libxml2-dev
+postgresql-dev
+expat-dev
+db-dev
+icu-dev
+gcc
+make
+
+
+(build local::lib)
+(use built-in cpan)
+
+cpan->
+	install CPAN
+	reload cpan
+	install local::lib
+
+(install cpanminusminus)
+wget -O /usr/local/bin/cpanm https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm
+chmod +x /usr/local/bin/cpanm
+
+(begin node stage)
+npm install 
+
+from musicbrainz dir:
+./script/compile_resources.sh
+
